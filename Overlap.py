@@ -43,11 +43,11 @@ def derivative(x,y):
 def dC_dAngle(width,height,offset,theta_max,n,z):
     Curve = area_disp(20,4,5,np.pi/2,100)
     Angles = Curve[0]    
-    Derivative = derivative(Angles,Curve[1])
+    dA_dAngle = derivative(Angles,Curve[1])
         
     eta = 8.854e-12
     
-    return eta*Derivative / z
+    return eta*dA_dAngle / z
 
 Curve = area_disp(20,4,5,np.pi/2,100)
 Angles = Curve[0]    

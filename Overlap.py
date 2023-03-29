@@ -8,6 +8,7 @@ Created on Tue Mar 28 23:02:45 2023
 from shapely.geometry import Polygon
 import numpy as np
 import matplotlib.pyplot as plt
+from numpy import diff
 
 def area_disp(width,height,offset,theta_max,n):
     #Define static rectangle 
@@ -36,9 +37,20 @@ def area_disp(width,height,offset,theta_max,n):
     return [arr_theta,area] 
 
 
-# def derivative(x,y):
+def derivative(x,y):
+    return diff(y)/diff(x)
+
+def dC_dAngle(width,height,offset,theta_max,n,z):
+    Curve = area_disp(20,4,5,np.pi/2,100)
+    Angles = Curve[0]    
+    Derivative = derivative(Angles,Curve[1])
+        
+    eta = 8.854e-12
     
+    return eta*Derivative / z
 
-
-Curve = area_disp(10,20,5,np.pi/2,100)
-plt.plot(Curve[0],Curve[1])
+Curve = area_disp(20,4,5,np.pi/2,100)
+Angles = Curve[0]    
+Derivative = derivative(Angles,Curve[1])
+plt.plot(Angles,Curve[1])
+plt.plot(Angles[:len(Derivative)],Derivative)

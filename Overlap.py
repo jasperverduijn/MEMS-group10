@@ -57,5 +57,5 @@ def dC_dAngle(width, height, offset, theta_max, n, z):
 Curve = area_disp(20, 4, 5, np.pi / 2, 100)
 Angles = Curve[0]
 Derivative = derivative(Angles, Curve[1])
-plt.plot(Angles, Curve[1])
-plt.plot(Angles[:len(Derivative)], Derivative)
+# plt.plot(Angles, Curve[1])
+# plt.plot(Angles[:len(Derivative)], Derivative)

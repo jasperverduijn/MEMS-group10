@@ -1,3 +1,7 @@
+# These calculations were not used in the final design, but
+# for an earlier iteration. Calculations are kept here as
+# reference
+
 youngs_E = 160 * 10 ** 9  # Pa
 poisson = 0.22
 shear_G = youngs_E / (2 * (1 + poisson))  # Pa

@@ -1,11 +1,12 @@
 import numpy as np
 
-rho = 2330  # kg mm^-3
+rho = 2330  # kg m^-3
 radius = 0.5 * 10 ** -3  # m
 thickness = 25 * 10 ** -6  # m
 volume = thickness * np.pi * radius ** 2
 weight = (2 / 3) * 9.81 * rho * volume  # N
 offset = 500 * 10 ** -6
+
 moment = weight * offset  # Nm
 print(moment)
 

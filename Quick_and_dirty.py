@@ -2,16 +2,6 @@ import numpy as np
 from Overlap import dC_dAngle
 import matplotlib.pyplot as plt
 
-
-# this we will get from overlap
-def capacitance(thickness, oferlap_length, non_overlap_length):
-    return 2
-
-
-def angle(overlap, non_overlap, thickness):
-    return thickness / (overlap + non_overlap)
-
-
 overlap_start = 40 * 10 ** -6
 overlap_stop = 80 * 10 ** -6
 thickness = 25 * 10 ** -6
@@ -21,7 +11,6 @@ overlap_range = np.arange(overlap_start, overlap_stop, 5 * 10 ** -6)
 non_overlap_range = np.arange(non_overlap_start, non_overlap_stop, 5 * 10 ** -6)
 voltage = 80
 j = 68.75 * 10 ** -6  # final non-overlapping length
-t = True
 
 for i in overlap_range:
     T = abs(160*((voltage ** 2) * dC_dAngle(i + j, thickness, j, 0.75, 1000, 3.5 * 10 ** -6)))

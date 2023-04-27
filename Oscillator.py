@@ -12,15 +12,15 @@ import numpy as np
 freq = 474
 
 def theta_dd(theta,t):
-    M = -(1e-10*140)*np.sin(2*np.pi*freq*t)
+    M = -(1e-10)*np.sin(2*np.pi*freq*t)
     K = 4.28e-8 #Nm/rad
     I = 4.8101e-15 
-    C = 2*0.95*np.sqrt(K*I)
+    C = 2*0.0065*np.sqrt(K*I)
 
     return [theta[1], (M-C*theta[1]-K*theta[0])/I]
 
 
-Cycles= 10
+Cycles= 80
 t_start = 0
 t_end = Cycles*(1/freq)
 step = (1/freq)/50
